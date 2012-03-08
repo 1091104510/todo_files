@@ -9,6 +9,11 @@
     <script src="./index_files/backbone.js"></script>
     <script src="./index_files/backbone-localstorage.js"></script>
     <script src="./index_files/todos.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="./index_files/jquery.noty.js"></script>
+<link rel="stylesheet" type="text/css" href="./index_files/jquery.noty.css">
+  <!--script src="./index_files/new_view.js"></script-->
+   
   </head>
 
   <body>
@@ -20,6 +25,13 @@
       <div class="title">
         <h1>Todos</h1>
       </div>
+     
+     <div id="button"> New
+    </div>
+      
+
+    <div id ="messg"></div>
+  
 
       <div class="content">
 
@@ -27,9 +39,11 @@
           <input id="new-todo" placeholder="What needs to be done?" type="text">
           <input id="new-due" placeholder="Due date: mm/dd/yyyy" type="text">
           <span class="ui-tooltip-top" style="display:none;">Press Enter to save this task</span>
+           <span class ="mes"style="display:none;">Noviy task</span>
         </div>
 
         <div id="todos">
+       <!-- <a href="///home/zhadyra/todo_files/new_view.html#">-->
           <ul id="todo-list">
           </ul>
         </div>
@@ -48,12 +62,19 @@
             completed <span class="word-done">item</span>
           </a>
         </span>
-
+ 
+       
     </div>
 
       </div>
 
     </div>
+
+    <div id ="todo-show" >
+     
+
+    </div>
+</â€®>
 
     <ul id="instructions">
       <li>Double-click to edit a todo.</li>
@@ -63,20 +84,25 @@
     <div id="credits">
       Created by
       <br>
-      <a href="http://jgn.me/">Jérôme Gravel-Niquet</a>
+      <a href="http://jgn.me/">JÃ©rÃ´me Gravel-Niquet</a>
     </div>
 
     <!-- Templates -->
 
     <script type="text/template" id="item-template">
       <div class="todo <%= done ? 'done' : '' %>">
+
+
         <div class="display">
           <input class="check" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
           <div class="todo-text"></div>
+          <div class ="todo-date"></div>
           <span class="todo-destroy"></span>
+          <span class ="todo-open">Open new page</span>
+          <span class ="todo-back">Back</span>
         </div>
         <div class="edit">
-          <input class="todo-input" type="text" value="" />
+          <input class="todo-input" typefun="text" value="" />
         </div>
       </div>
     </script>
@@ -98,7 +124,7 @@
       <% } %>
     </script>
 
-
+ 
 
 
 </body></html>
