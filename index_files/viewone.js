@@ -171,6 +171,6 @@ window.TodoViewOne = Backbone.View.extend({
       $("#todo-show").html("");	
 
     }
-});
+  });
 
-    });
+  });

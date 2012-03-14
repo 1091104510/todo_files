@@ -1,10 +1,7 @@
 $(function(){
 
     // Todo Item View
-    // --------------
-
-    // The DOM element for a todo item...
-    window.TodoView = Backbone.View.extend({
+      window.TodoView = Backbone.View.extend({
 
     //... is a list tag.
     tagName:  "li",

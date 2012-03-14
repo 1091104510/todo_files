@@ -67,5 +67,5 @@ class window.AppView extends Backbone.View
   toggle_new: (e) ->
       $("#create-todo").slideToggle()
 
-   window.App = new AppView
+window.App = new AppView
 

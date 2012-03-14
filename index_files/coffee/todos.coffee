@@ -39,7 +39,7 @@ class window.TodoList extends Backbone.Collection
         console.log "trigg'..d."
         console.log "item with duedate is added"  if item.get("due") isnt null
  
-   window.Todos = new TodoList
+window.Todos = new TodoList
 
 
 
