@@ -4,7 +4,7 @@ class window.AppView extends Backbone.View
   template: _.template($("#stats-template").html())
 
   events:
-      "keypress #new-todo"       : "createOnEnter"
+      "keypress #new-todo"        : "createOnEnter"
       "keypress #new-due"         : "createOnEnter"
       "keyup #new-todo"           : "showTooltip"
       "keyup #new-due"            : "showTooltip"
@@ -65,5 +65,8 @@ class window.AppView extends Backbone.View
 
   toggle_new: (e) ->
       $("#create-todo").slideToggle()
+
+   window.App = new AppView
+
 
 

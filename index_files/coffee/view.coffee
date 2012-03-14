@@ -1,4 +1,4 @@
-window.TodoView = Backbone.View.extend(
+class window.TodoView extends Backbone.View
   tagName: "li"
   template: _.template($("#item-template").html())
 
@@ -37,7 +37,8 @@ window.TodoView = Backbone.View.extend(
       @model.save text: @input.val()
       $(@el).removeClass "editing"
 
-  updateOnEnter: (e) ->
+  updateOnEnter: (e) -> 
+      class window.AppView extends Backbone.View
       @close()  if e.keyCode is 13
 
   remove: ->
@@ -49,4 +50,8 @@ window.TodoView = Backbone.View.extend(
   opentodo: ->
       console.log "Yay, triggered."
       view = new TodoViewOne(model: @model)
-      $("#todo-show").html view.render().el)
+      $("#todo-show").html view.render().el
+
+
+
+
