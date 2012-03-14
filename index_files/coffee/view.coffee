@@ -15,6 +15,7 @@ class window.TodoView extends Backbone.View
 
   render: ->
       $(@el).html @template(@model.toJSON())
+
       @setText()
       @
 

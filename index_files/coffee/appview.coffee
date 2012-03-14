@@ -1,7 +1,7 @@
 class window.AppView extends Backbone.View
 
   el: $("#todoapp")
-  template: _.template($("#stats-template").html())
+  template:_.template($("#stats-template").html())
 
   events:
       "keypress #new-todo"        : "createOnEnter"
@@ -21,6 +21,7 @@ class window.AppView extends Backbone.View
 
   render: ->
       @$("#todo-stats").html @statsTemplate(
+
         total: Todos.length
         done: Todos.done().length
         remaining: Todos.remaining().length
@@ -67,6 +68,4 @@ class window.AppView extends Backbone.View
       $("#create-todo").slideToggle()
 
    window.App = new AppView
-
-
 
