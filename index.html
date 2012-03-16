@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <!-- saved from url=(0066)http://documentcloud.github.com/backbone/examples/todos/index.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
     <title>Backbone Demo: Todos</title>
     <link href="./index_files/todos.css" media="all" rel="stylesheet" type="text/css">
-    <script src="./index_files/json2.js"></script><link type="text/css" rel="stylesheet" href="data:text/css,">
-    <script src="./index_files/jquery-1.7.1.js"></script>
-    <script src="./index_files/underscore-1.3.1.js"></script>
-    <script src="./index_files/backbone.js"></script>
-    <script src="./index_files/backbone-localstorage.js"></script>
-    <script src="./index_files/src/todos.js"></script>
-    <script src="./index_files/src/view.js"></script>
-    <script src="./index_files/src/viewone.js"></script>
-    <script src="./index_files/src/appview.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="./index_files/jquery.noty.css">
+    <link rel="stylesheet" type="text/css" href="./index_files/datePicker.css">
+    <link rel="stylesheet" type="text/css" href="./index_files/jquery-ui-1.8.18.custom/css/hot-sneaks/jquery-ui-1.8.18.custom.css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
     
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
-     
-
-
-  <script type="text/javascript" src="./index_files/jquery.noty.js"></script> 
-  <link rel="stylesheet" type="text/css" href="./index_files/jquery.noty.css">
-  <!--script src="./index_files/new_view.js"></script-->
-   
   </head>
 
   <body>
+ <script src="./index_files/json2.js"></script><link type="text/css" rel="stylesheet" href="data:text/css,">
+    <script src="./index_files/jquery-1.7.1.js"></script>
+    <script src="./index_files/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="./index_files/jquery.noty.js"></script>
+    <script src="./index_files/underscore-1.3.1.js"></script>
+    <script src="./index_files/backbone.js"></script>
+    <script src="./index_files/backbone-localstorage.js"></script>
+    <script src="./index_files/todos.js"></script>
+    <script src="./index_files/view.js"></script>
+    <script src="./index_files/viewone.js"></script>
+    <script src="./index_files/appview.js"></script>
+    <script src="./index_files/jquery.ui.datepicker.js"></script>
+    <script src="./index_files/jquery.ui.core.js"></script>
 
+
+      <!-- for shortcut -->
+  
+    <script type="text/javascript" src="https://raw.github.com/madrobby/keymaster/master/keymaster.min.js"></script>
+    <script src="./index_files/backbone.shortcuts.js"></script>
+    <script src="./index_files/shortcut.js"></script>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+  
     <!-- Todo App Interface -->
 
     <div id="todoapp">
@@ -34,17 +45,21 @@
       <div class="title">
         <h1>Todos</h1>
      </div>
-     
+
      <div id="button"> New </div>
-      
+    
+     <div data-role="content" id="contentDiv" class="ui-content" role="main"></div>
+
     <div id ="messg"></div>
       <div class="content">
 
           <div id="create-todo">
           <input id="new-todo" placeholder="What needs to be done?" type="text">
-          <input id="new-due" placeholder="Due date: mm/dd/yyyy" type="text">
+        
+          <input id="datepicker" placeholder="DD/MM/YY" type="text">
           <span class="ui-tooltip-top" style="display:none;">Press Enter to save this task</span>
            <span class ="mes"style="display:none;">Noviy task</span>
+          
         </div>
 
         <div id="todos">
@@ -67,7 +82,7 @@
             completed <span class="word-done">item</span>
           </a>
         </span>
- 
+
     </div>
 
       </div>
@@ -75,7 +90,7 @@
     </div>
 
     <div id ="todo-show" >
-     
+
 
     </div>
 </‮>
@@ -101,9 +116,12 @@
           <input class="check" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
           <div class="todo-text"></div>
           <div class ="todo-date"></div>
+         <div class ="datepicker"></div>
+
           <span class="todo-destroy"></span>
           <span class ="todo-open">Open new page</span>
           <span class ="todo-back">Back</span>
+
         </div>
         <div class="edit">
           <input class="todo-input" typefun="text" value="" />
@@ -127,8 +145,5 @@
         </span>
       <% } %>
     </script>
-
- 
-
 
 </body></html>

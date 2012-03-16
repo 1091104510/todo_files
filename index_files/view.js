@@ -23,6 +23,7 @@ $(function(){
     initialize: function() {
       this.model.bind('change', this.render, this);
       this.model.bind('destroy', this.remove, this);
+      
     },
 
     // Re-render the contents of the todo item.
@@ -41,7 +42,7 @@ $(function(){
       this.$('.todo-text').text(text);
       this.input = this.$('.todo-input');
       
-      this.$('.todo-date').text(due);
+      this.$('.datepicker').text(due);
     
       this.input.bind('blur', _.bind(this.close, this)).val(text);
     },
@@ -84,7 +85,7 @@ $(function(){
 	      console.log("Yay, triggered.")
         var view = new TodoViewOne({model: this.model});
         $("#todo-show").html(view.render().el);	
-    }
-
+    } 
+    
    });
   });

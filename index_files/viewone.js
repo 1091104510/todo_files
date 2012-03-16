@@ -40,7 +40,7 @@ window.TodoViewOne = Backbone.View.extend({
       this.$('.todo-text').text(text);
       this.input = this.$('.todo-input');
       
-      this.$('.todo-date').text(due);
+      this.$('.datepicker').text(due);
     
       this.input.bind('blur', _.bind(this.close, this)).val(text);
     },
@@ -126,7 +126,7 @@ window.TodoViewOne = Backbone.View.extend({
       this.$('.todo-text').text(text);
       this.input = this.$('.todo-input');
       
-      this.$('.todo-date').text(due);
+      this.$('.datepicker').text(due);
     
       this.input.bind('blur', _.bind(this.close, this)).val(text);
     },

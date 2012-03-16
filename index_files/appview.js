@@ -13,28 +13,27 @@ $(function(){
 
     // Delegated events for creating new items, and clearing completed ones.
     events: {
-      "keypress #new-todo":  "createOnEnter",
-      "keypress #new-due":  "createOnEnter",
-      
-      "keyup #new-todo":     "showTooltip",
-      "keyup #new-due":      "showTooltip",
-      "click .todo-clear a": "clearCompleted", 
-      "click #button"     : "toggle_new"
-
-     
+      "keypress #new-todo"  : "createOnEnter",
+      "keypress #datepicker": "createOnEnter",
+      "keyup #new-todo"     : "showTooltip",
+      "keyup #datepicker"   : "showTooltip",
+      "click .todo-clear a" : "clearCompleted", 
+      "click #button"       : "toggle_new",
+      "click #datepicker"   : "setdate"
     },
+
 
     // At initialization we bind to the relevant events on the `Todos`
     // collection, when items are added or changed. Kick things off by
     // loading any preexisting todos that might be saved in *localStorage*.
     initialize: function() {
       this.input    = this.$("#new-todo");
-      this.input1   = this.$("#new-due");
+      this.input1   = this.$("#datepicker");
 
       Todos.bind('add',   this.addOne, this);
       Todos.bind('reset', this.addAll, this);
-      Todos.bind('all',   this.render, this);
-
+      Todos.bind('all',   this.render, this); 
+      Todos.bind('create', this.setdate, this);
       Todos.fetch();
     },
 
@@ -69,13 +68,13 @@ $(function(){
     createOnEnter: function(e) {
 
       var text = $("#new-todo").val()  
-      var due = $("#new-due").val()
+      var due = $("#datepicker").val()
        
       if (e.keyCode == 13) 
       {
        	Todos.create({text: text, due: due})
 	      $("#new-todo").val("")
-	      $("#new-due").val("")
+	      $("#datepicker").val("")
      
         noty({text: 'New task is created! '});
      }   
@@ -103,10 +102,18 @@ $(function(){
 
    toggle_new: function(e)
    {
-    $("#create-todo").slideToggle();
-   }
+   
+      $("#create-todo").slideToggle();
+    
+   },
 
-  // The Application
+   setdate: function()
+    {
+      console.log("Hey, here i am....");
+      $("#datepicker").datepicker();
+    }
+  
+ 
  });
   
   window.App = new AppView;
